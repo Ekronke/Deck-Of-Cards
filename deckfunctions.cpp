@@ -2,10 +2,29 @@
 #include <numeric>
 #include <vector>
 #include <iostream>
+#include <string>
+#include <fstream>	
 #include "deckfunctions.h"
 
-void cardOutput(int card) {
-    switch (card) {
+void drawWelcomeTxt()
+{
+	std::string line;
+	std::ifstream txtFile ("etc/welcome.txt");
+	if (txtFile.is_open())
+	{
+		while (getline (txtFile,line))
+		{
+			std::cout << line << '\n';
+		}
+		txtFile.close();
+	}
+	else std::cout << "Unable to open file \n";
+}
+
+void cardOutput(int card) 
+{
+    switch (card) 
+	{
         case 1:
             std::cout << "Ace of Spades\n";
             break;
@@ -31,7 +50,8 @@ void cardOutput(int card) {
             std::cout << "8 of Spades\n";
             break;
         case 9:
-            std::cout << "9 of Spades\n";
+            std::cout 
+				<< "9 of Spades\n";
             break;
         case 10:
             std::cout << "10 of Spades\n";

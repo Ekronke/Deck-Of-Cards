@@ -3,6 +3,8 @@
 
 #include <vector>
 
+void drawWelcomeTxt();
+
 void cardOutput(int card);
 
 std::vector<int> createDeck();
